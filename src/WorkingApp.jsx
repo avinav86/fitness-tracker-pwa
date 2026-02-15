@@ -63,7 +63,7 @@ function AppContent() {
   }
 
   return (
-    <div className="h-screen overflow-y-auto overflow-x-hidden bg-ios-gray-6 pb-20" style={{ overscrollBehavior: 'none' }}>
+    <div className="min-h-screen bg-ios-gray-6 pb-20">
       {/* Main content */}
       <div className="safe-top">
         {activeTab === 'home' && (
