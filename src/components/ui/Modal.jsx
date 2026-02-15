@@ -7,16 +7,8 @@ const Modal = ({
   children,
   className = '',
 }) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+  // Body overflow is handled globally in index.css
+  // removed useEffect
 
   if (!isOpen) return null
 
@@ -54,7 +46,7 @@ const Modal = ({
         )}
 
         {/* Content */}
-        <div className="scrollable max-h-[calc(90vh-80px)] overflow-y-auto">
+        <div className="scrollable max-h-[calc(90vh-80px)] overflow-y-auto overscroll-contain">
           {children}
         </div>
       </div>
